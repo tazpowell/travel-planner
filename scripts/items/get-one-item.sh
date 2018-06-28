@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:4741/items/${ID}" \
+curl "https://aqueous-forest-96537.herokuapp.com/${ID}" \
   --include \
   --request GET \
   --header "Authorization: Token token=${TOKEN}"
