@@ -12,6 +12,7 @@ The application uses two resources, Users and Items.
 ## Technologies
 Ruby on Rails, Ruby
 
+
 ## API
 ### User authentication
 | Verb   | URI Pattern            | Controller#Action |
@@ -100,7 +101,7 @@ Content-Type: application/json; charset=utf-8
 Request:
 
 ```sh
-curl "http://localhost:4741/change-password" \
+curl "https://aqueous-forest-96537.herokuapp.com/change-password" \
   --include \
   --request PATCH \
   --header "Authorization: Token token=${TOKEN}" \
@@ -187,13 +188,21 @@ Content-Type: application/json; charset=utf-8
       "id": 1,
       "name": "Tokyo Skytree",
       "date": "2019-10-01",
-      "active": "true"
+      "active": "true",
+      "user": {
+        "id": 1,
+        "email": "sample@email.com"
+      }
     },
     {
       "id": 2,
       "name": "Ghibli Museum",
       "date": "2019-10-03",
-      "active": "false"
+      "active": "false",
+      "user": {
+        "id": 1,
+        "email": "sample@email.com"
+      }
     }
   ]
 }
@@ -227,7 +236,11 @@ Content-Type: application/json; charset=utf-8
     "id": 2,
     "name": "Ghibli Museum",
     "date": "2019-10-03",
-    "active": "false"
+    "active": "false",
+    "user": {
+      "id": 1,
+      "email": "sample@email.com"
+    }
   }
 }
 ```
@@ -268,7 +281,11 @@ Content-Type: application/json; charset=utf-8
     "id": 3,
     "name": "Robot Cafe",
     "date": "2019-10-10",
-    "active": "true"
+    "active": "true",
+    "user": {
+      "id": 1,
+      "email": "sample@email.com"
+    }
   }
 }
 ```
@@ -278,7 +295,7 @@ Content-Type: application/json; charset=utf-8
 Request:
 
 ```sh
-curl "https://aqueous-forest-96537.herokuapp.com/${ID}" \
+curl "https://aqueous-forest-96537.herokuapp.com/items/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
@@ -300,7 +317,21 @@ ID=3 NAME='Robot Cafe 2' DATE='2019-10-31' ACTIVE=false TOKEN='BAhJIiVlZDIwZTMzM
 Response:
 
 ```md
-HTTP/1.1 204 No Content
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+
+{
+  "item": {
+    "id": 3,
+    "name": "Robot Cafe",
+    "date": "2019-10-10",
+    "active": "true",
+    "user": {
+      "id": 1,
+      "email": "sample@email.com"
+    }
+  }
+}
 ```
 
 #### DELETE /items/:id
