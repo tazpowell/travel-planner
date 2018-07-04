@@ -323,9 +323,9 @@ Content-Type: application/json; charset=utf-8
 {
   "item": {
     "id": 3,
-    "name": "Robot Cafe",
-    "date": "2019-10-10",
-    "active": "true",
+    "name": "Robot Cafe 2",
+    "date": "2019-10-31",
+    "active": "false",
     "user": {
       "id": 1,
       "email": "sample@email.com"
