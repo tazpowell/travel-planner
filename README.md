@@ -22,6 +22,7 @@ Ruby on Rails, Ruby
 | PATCH  | `/change-password`     | `users#changepw`  |
 | DELETE | `/sign-out`            | `users#signout`   |
 
+---
 #### POST /sign-up
 
 Request:
@@ -58,7 +59,7 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
-
+---
 #### POST /sign-in
 
 Request:
@@ -95,7 +96,7 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
-
+---
 #### PATCH /change-password
 
 Request:
@@ -124,7 +125,7 @@ Response:
 ```md
 HTTP/1.1 204 No Content
 ```
-
+---
 #### DELETE /sign-out
 
 Request:
@@ -148,6 +149,7 @@ Response:
 HTTP/1.1 204 No Content
 ```
 
+
 ### Items
 | Verb   | URI Pattern            | Controller#Action |
 |--------|------------------------|-------------------|
@@ -159,6 +161,7 @@ HTTP/1.1 204 No Content
 
 All items CRUD requests must include a header "Authorization: Token token=${TOKEN}".
 
+---
 #### GET /items
 
 Request:
@@ -207,7 +210,7 @@ Content-Type: application/json; charset=utf-8
   ]
 }
 ```
-
+---
 #### GET /items/:id
 
 Request:
@@ -244,7 +247,7 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
-
+---
 #### POST /items
 
 Request:
@@ -289,7 +292,7 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
-
+---
 #### PATCH /items/:id
 
 Request:
@@ -333,7 +336,7 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
-
+---
 #### DELETE /items/:id
 
 Request:
@@ -356,6 +359,7 @@ Response:
 ```md
 HTTP/1.1 204 No Content
 ```
+
 
 
 ## Development Process
